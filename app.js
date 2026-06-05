@@ -1,23 +1,10 @@
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", async () => {
+    try {
+      await navigator.serviceWorker.register("/sw.js");
+      console.log("Service Worker Registered");
+    } catch (e) {
+      console.error(e);
+    }
+  });
 }
-
-function parseVCF(vcf) {
-
-    const nameMatch = vcf.match(/FN:(.*)/);
-
-    const telMatch = vcf.match(/TEL.*:(.*)/);
-
-    return {
-        name: nameMatch ? nameMatch[1] : '',
-        phone: telMatch ? telMatch[1] : ''
-    };
-}
-
-document
-.getElementById('claimBtn')
-.addEventListener('click', () => {
-
-    alert('Claim berhasil');
-
-});
