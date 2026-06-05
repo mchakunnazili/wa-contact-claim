@@ -6,6 +6,7 @@
   "display": "standalone",
   "theme_color": "#25D366",
   "background_color": "#ffffff",
+
   "icons": [
     {
       "src": "/icon-192.png",
@@ -17,5 +18,15 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+
+  "share_target": {
+    "action": "/share.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
